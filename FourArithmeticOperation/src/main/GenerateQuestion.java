@@ -2,6 +2,7 @@ package main;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GenerateQuestion {
 
@@ -11,23 +12,39 @@ public class GenerateQuestion {
         return questionList;
     }
     //生成一个随机符号
-    public char randomSymbol(){
-        return '.';
+    public static char randomSymbol(){
+        Character[] s = new Character[4];
+        Random r= new Random();
+        int i = r.nextInt(4);
+        int b;
+        s[0] = '+';
+        s[1] = '-';
+        s[2] = '*';
+        s[3] = '/';
+
+        return s[i];
     }
+
     //生成一个随机正整数
-    public int randomInt(){
-        return 0;
+    public  static int randomInt(int r){
+        Random ra = new Random();
+        int i;
+        i = ra.nextInt(r);
+        return i;
     }
+
     //生成一个含一个符号的题目
-    public String oneSymbol(){
+    public static String oneSymbol(){
         return null;
     }
+
     //生成一个含两个符号的题目
-    public String twoSymbol(){
+    public static String twoSymbol(){
         return null;
     }
+
     //生成一个含三个符号的题目
-    public String threeSymbol(){
+    public static String threeSymbol(){
         return null;
     }
 }
