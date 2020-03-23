@@ -1,7 +1,6 @@
 package main;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,26 +17,34 @@ public class MyMathApp {
         String order = scanner.next();
         switch(order){
             case "-q":
-                System.out.println("请输入生成题目个数-n");
+                System.out.println("请输入生成题目个数-n：");
                 n=scanner.nextInt();
                 System.out.println("请输入数值取值范围-r：");
                 r=scanner.nextInt();
-                List<String> questionList = new ArrayList<>();
-                List<String> answerList = new ArrayList<>();
-                questionList = GenerateQuestion.generateQuestion(n,r);
-                answerList = Calculator.calculate(questionList);
+                List<String> questionList = GenerateQuestion.generateQuestion(n,r);
+                List<String> answerList = Calculator.calculate(questionList);
                 printQuestion(questionList);
                 printAnswer(answerList);
                 break;
             case "-c":
+                System.out.println("请输入题目文件：");
+                String questionfilename = scanner.nextLine();
+                File questionfile = new File(questionfilename);
 
+                System.out.println("请输入答案文件：");
+                String answerfilename = scanner.nextLine();
+                File answerfile = new File(answerfilename);
+
+                List<String> result = CompareAnswer.compareAnswer(questionfile,answerfile);
+                printCompareResult(result);
+                break;
             default:
                 System.out.println("你的输入有误！");
                 break;
         }
 
     }
-    //输出问题文件
+    //输出题目文件
     public static void printQuestion(List<String> queList){
 
     }
@@ -45,8 +52,8 @@ public class MyMathApp {
     public static void printAnswer(List<String> ansList){
 
     }
-    //比较正确答案与你的答案
-    public static void compareAnswer(File questionfile, File answerfile, File youranswerfile){
-        List<String> compareResult = new ArrayList<>();
+    //输出答案的比较结果
+    public static void printCompareResult(List<String> resultList){
+
     }
 }
