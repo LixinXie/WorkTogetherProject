@@ -9,9 +9,10 @@ public class MyMathApp {
     public static void main(String[] args) {
         int n;//题目个数
         int r;//数值取值范围
-        System.out.println("欢迎使用小学四则运算生成题目");
+        System.out.println("欢迎使用四则运算");
         System.out.println("-q 生成题目和答案");
         System.out.println("-c 验证你的答案");
+        System.out.println("--------------");
         System.out.println("请选择你的操作：");
         Scanner scanner = new Scanner(System.in);
         String order = scanner.next();
