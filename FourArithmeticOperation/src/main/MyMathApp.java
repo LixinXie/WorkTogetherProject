@@ -1,6 +1,6 @@
 package main;
 
-import java.io.File;
+import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
@@ -46,14 +46,20 @@ public class MyMathApp {
     }
     //输出题目文件
     public static void printQuestion(List<String> queList){
-
+        File file = new File("./Exercises.txt");
+        OutputFile.outputFile(file,queList);
+        System.out.println("生成题目成功！");
     }
     //输出答案文件
     public static void printAnswer(List<String> ansList){
-
+        File file = new File("./Answers.txt");
+        OutputFile.outputFile(file,ansList);
+        System.out.println("生成答案成功！");
     }
     //输出答案的比较结果
     public static void printCompareResult(List<String> resultList){
-
+        File file = new File("./Grade.txt");
+        OutputFile.outputFile(file,resultList);
+        System.out.println("答案验证完成！");
     }
 }
