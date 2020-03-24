@@ -48,19 +48,19 @@ public class MyMathApp {
     //输出题目文件
     public static void printQuestion(List<String> queList){
         File file = new File("./Exercises.txt");
-        OutputFile.outputFile(file,queList);
+        OutputFile.list2file(file,queList);
         System.out.println("生成题目成功！");
     }
     //输出答案文件
     public static void printAnswer(List<String> ansList){
         File file = new File("./Answers.txt");
-        OutputFile.outputFile(file,ansList);
+        OutputFile.list2file(file,ansList);
         System.out.println("生成答案成功！");
     }
     //输出答案的比较结果
     public static void printCompareResult(List<String> resultList){
         File file = new File("./Grade.txt");
-        OutputFile.outputFile(file,resultList);
+        OutputFile.list2file(file,resultList);
         System.out.println("答案验证完成！");
     }
 }

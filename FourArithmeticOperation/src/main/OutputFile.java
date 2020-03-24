@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OutputFile {
     //输出文件
-    public static void outputFile(File file, List<String> list){
+    public static void list2file(File file, List<String> list){
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(file));
