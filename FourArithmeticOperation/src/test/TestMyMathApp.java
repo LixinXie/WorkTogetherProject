@@ -28,8 +28,10 @@ public class TestMyMathApp {
     }
     @Test
     public void test(){
-        char c = GenerateQuestion.randomSymbol();
-        System.out.println(c);
+        String[] s = new String[2];
+        s[1] = GenerateQuestion.threeSymbol(50);
+        System.out.println(s[1]);
 
     }
+
 }
