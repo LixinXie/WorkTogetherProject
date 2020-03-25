@@ -9,6 +9,18 @@ public class GenerateQuestion {
     //生成题目，可被其他类调用
     public static List<String> generateQuestion(int n, int r){
         List<String> questionList = new ArrayList<>();
+        Random random = new Random();
+        for(int i=0;i<n;i++){
+            int j = random.nextInt(3);
+            switch (j){
+                case 0: questionList.add(oneSymbol(r));
+                    break;
+                case 1: questionList.add(twoSymbol(r));
+                    break;
+                case 2: questionList.add(threeSymbol(r));
+                    break;
+            }
+        }
         return questionList;
     }
     //生成一个随机符号
@@ -26,10 +38,10 @@ public class GenerateQuestion {
     }
 
     //生成一个随机正整数
-    public  static int randomInt(int r){
+    public static int randomInt(int r){
         Random ra = new Random();
         int i;
-        i = ra.nextInt(r);
+        i = ra.nextInt(r)+1;
         return i;
     }
 
