@@ -34,17 +34,44 @@ public class GenerateQuestion {
     }
 
     //生成一个含一个符号的题目
-    public static String oneSymbol(){
-        return null;
+    public static String oneSymbol(int r){
+        String[] s = new String[2];
+        int a,b;
+        char c;
+        c = randomSymbol();
+        a = randomInt(r);
+        b = randomInt(r);
+        s[1] = a + "" + c + b;
+        return s[1];
     }
 
     //生成一个含两个符号的题目
-    public static String twoSymbol(){
-        return null;
+    public static String twoSymbol(int r){
+        String[] s = new String[2];
+        int a,b,c;
+        char c1,c2;
+        a = randomInt(r);
+        b = randomInt(r);
+        c = randomInt(r);
+        c1 = randomSymbol();
+        c2 = randomSymbol();
+        s[1] =""+ a + c1 + b + c2 + c;
+        return s[1];
     }
 
     //生成一个含三个符号的题目
-    public static String threeSymbol(){
-        return null;
+    public static String threeSymbol(int r){
+        String[] s = new String[2];
+        int a,b,c,d;
+        char c1,c2,c3;
+        a = randomInt(r);
+        b = randomInt(r);
+        c = randomInt(r);
+        d = randomInt(r);
+        c1 = randomSymbol();
+        c2 = randomSymbol();
+        c3 = randomSymbol();
+        s[1] = "" + a + c1 + b + c2 + c + c3 + d;
+        return s[1];
     }
 }
