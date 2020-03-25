@@ -12,9 +12,10 @@ public class TestMyMathApp {
     @Test
     public void testPrintQuestion(){
         List<String> list = new ArrayList<>();
-        list.add("1. 1+2=");
-        list.add("2. 2+3=");
-        list.add("3. 4+5=");
+        list.add("1+2");
+        list.add("2+3");
+        list.add("4+5");
+        list.add("(2+3)*5");
         MyMathApp.printQuestion(list);
     }
     @Test

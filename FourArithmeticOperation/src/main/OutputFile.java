@@ -9,11 +9,13 @@ import java.util.List;
 public class OutputFile {
     //输出文件
     public static void list2file(File file, List<String> list){
+        int i=1;//行号从1开始
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(file));
             for (String s : list) {
-                writer.write(s+"\n");
+                writer.write(i+". "+s+"="+"\n");
+                i++;
             }
         } catch (IOException e) {
             e.printStackTrace();
