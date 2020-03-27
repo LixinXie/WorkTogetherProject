@@ -6,7 +6,10 @@ import java.util.List;
 public class Calculator {
     public static List<String> calculate(List<String> questionList){//计算题目表达式，题目中没有=和题号
         List<String> answerList = new ArrayList<>();
-
+        for(int i=0;i<questionList.size();i++){
+            String str = questionList.get(i);
+            
+        }
         return answerList;
     }
     //加法

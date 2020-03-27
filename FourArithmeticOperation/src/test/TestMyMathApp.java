@@ -12,13 +12,12 @@ public class TestMyMathApp {
 
     @Test
     public void testPrintQuestion(){
-        List<String> list = new ArrayList<>();
-        list = GenerateQuestion.generateQuestion(100,4);
+        List<String> list = GenerateQuestion.generateQuestion(30,4);
         MyMathApp.printQuestion(list);
     }
     @Test
     public void testPrintAnsweer(){
-        List<String> list = new ArrayList<>();
+        List<String> list = GenerateQuestion.generateQuestion(30,4);
         MyMathApp.printAnswer(list);
     }
     @Test
@@ -26,7 +25,19 @@ public class TestMyMathApp {
 
     }
     @Test
-    public void test(){
+    public void test1(){
+        String[] s = new String[2];
+        s[1] = GenerateQuestion.oneSymbol(50);
+        System.out.println(s[1]);
+    }
+    @Test
+    public void test2(){
+        String[] s = new String[2];
+        s[1] = GenerateQuestion.twoSymbol(50);
+        System.out.println(s[1]);
+    }
+    @Test
+    public void test3(){
         String[] s = new String[2];
         s[1] = GenerateQuestion.threeSymbol(50);
         System.out.println(s[1]);
