@@ -36,7 +36,7 @@ public class MyMathApp {
                 String answerfilename = scanner.nextLine();
                 File answerfile = new File(answerfilename);
 
-                List<String> result = CompareAnswer.compareAnswer(questionfile,answerfile);
+                List<List> result = CompareAnswer.compareAnswer(questionfile,answerfile);
                 printCompareResult(result);
                 break;
             default:
@@ -48,19 +48,19 @@ public class MyMathApp {
     //输出题目文件
     public static void printQuestion(List<String> queList){
         File file = new File("./Exercises.txt");
-        OutputFile.list2file(file,queList);
+        OutputFile.questionlist2file(file,queList);
         System.out.println("生成题目成功！");
     }
     //输出答案文件
     public static void printAnswer(List<String> ansList){
         File file = new File("./Answers.txt");
-        OutputFile.list2file(file,ansList);
+        OutputFile.answerlist2file(file,ansList);
         System.out.println("生成答案成功！");
     }
     //输出答案的比较结果
-    public static void printCompareResult(List<String> resultList){
+    public static void printCompareResult(List<List> resultList){
         File file = new File("./Grade.txt");
-        OutputFile.list2file(file,resultList);
+        OutputFile.compareresultlist2file(file,resultList);
         System.out.println("答案验证完成！");
     }
 }

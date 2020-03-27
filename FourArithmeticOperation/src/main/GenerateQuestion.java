@@ -80,10 +80,10 @@ public class GenerateQuestion {
             }else if(c1=='-'){// - 其他
                 if(c2=='*' && a-b*c>=0){// - *
                     break;
-                }else if(c2=='/'&&a-b/c>=0){// - /
+                }else if(c2=='/'&& a-b/c>=0){// - /
                     break;
                 }
-                if(c2=='+'&&a-b+c>=0)// - +
+                if(c2=='+'&& a-b>=0)// - +
                     break;
             }else{// 其他 -
                 if(c1=='+' && a+b-c>=0){// + -

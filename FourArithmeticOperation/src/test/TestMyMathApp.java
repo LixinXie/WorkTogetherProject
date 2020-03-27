@@ -17,7 +17,10 @@ public class TestMyMathApp {
     }
     @Test
     public void testPrintAnsweer(){
-        List<String> list = GenerateQuestion.generateQuestion(30,4);
+        List<String> list = new ArrayList<>();
+        list.add("23");
+        list.add("3");
+        list.add("100");
         MyMathApp.printAnswer(list);
     }
     @Test
