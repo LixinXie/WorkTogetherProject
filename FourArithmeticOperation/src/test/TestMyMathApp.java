@@ -18,7 +18,8 @@ public class TestMyMathApp {
     }
     @Test
     public void testPrintAnsweer(){
-
+        List<String> list = new ArrayList<>();
+        MyMathApp.printAnswer(list);
     }
     @Test
     public void testCompareAnswer(){
@@ -34,13 +35,38 @@ public class TestMyMathApp {
     @Test
     public void testCalculator(){
         List<String> list = new ArrayList<>();
-        list.add("1. 1+2=");
-        list.add("2. 2*3=");
-        list.add("3. 2-3=");
+        list.add("1+2");
+        list.add("2*3");
+        list.add("2-3");
         List<String> answer = Calculator.calculate(list);
         for (String s : answer) {
             System.out.println(s);
         }
+    }
+    @Test
+    public void testadd(){
+        int s = Calculator.add(1,100);
+        System.out.println(s);
+    }
+    @Test
+    public void testsub(){
+        int s = Calculator.sub(12,3);
+        System.out.println(s);
+    }
+    @Test
+    public void testmul(){
+        int s = Calculator.mul(3,7);
+        System.out.println(s);
+    }
+    @Test
+    public void testdiv(){
+        String result = Calculator.div(50,15);
+        System.out.println(result);
+    }
+    @Test
+    public void testmaxCommonDivisor(){
+        int s = Calculator.maxCommonDivisor(0,20);
+        System.out.println(s);
     }
 
 }

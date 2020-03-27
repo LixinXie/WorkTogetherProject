@@ -8,6 +8,8 @@ public class CompareAnswer {
     //验证答案正误
     public static List<String> compareAnswer(File questionFile, File yourAnswerFile){
         List<String> compareResult = new ArrayList<>();
+        List<String> correctAnswer;
+        List<String> yourAnswer;
         return compareResult;
     }
 }
