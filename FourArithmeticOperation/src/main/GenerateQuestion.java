@@ -41,7 +41,10 @@ public class GenerateQuestion {
     public static int randomInt(int r){
         Random ra = new Random();
         int i;
-        i = ra.nextInt(r)+1;
+        while(true) {
+            i = ra.nextInt(r);
+            if(i!=0)break;
+        }
         return i;
     }
 
@@ -103,22 +106,94 @@ public class GenerateQuestion {
 
     //生成一个含三个符号的题目
     public static String threeSymbol(int r){
-        String[] s = new String[2];
         int a,b,c,d;
-        char c1,c2,c3;
+        String s = new String();
+        String s1,s2;
+        char c1 = randomSymbol();
+        char c2 = randomSymbol();
+        char c3 = randomSymbol();
         a = randomInt(r);
         b = randomInt(r);
         c = randomInt(r);
         d = randomInt(r);
-        c1 = randomSymbol();
-        c2 = randomSymbol();
-        c3 = randomSymbol();
-        while(c1=='-'||c2=='-'||c3=='-'){//保证计算过程非负
-            c1 = randomSymbol();
-            c2 = randomSymbol();
-            c3 = randomSymbol();
-        }
-        s[1] = "" + a + c1 + b + c2 + c + c3 + d;
-        return s[1];
+        if(c1=='-'||c2=='-'||c3=='-') {
+            while (true) {
+                a = randomInt(r);
+                b = randomInt(r);
+                c = randomInt(r);
+                d = randomInt(r);
+                if (c1 == '-' && c2 == '-' && c3 == '-') {
+                    if (a - b - c - d >= 0) break;}
+                else if (c1=='-'&&c2=='-'){
+                    if(c3=='+' && a-b-c+d>=0)break;
+                    if(c3=='*' && a-b-c*d>=0)break;
+                    if(c3=='/' && a-b-c/d>=0)break;
+                }
+                else if(c1=='-'&&c3=='-') {
+                    if (c2 == '+' && a-b>=0 &&c-d>=0)break;
+                    if (c2 == '*' && a-b*c-d>=0)break;
+                    if (c2 == '/' && a-b/c-d>=0)break;
+                }
+                else if(c2=='-'&&c3=='-') {
+                    if (c1 == '+' && a+b-c-d>=0)break;
+                    if (c1 == '*' && a*b-c-d>=0)break;
+                    if (c1 == '/' && a/b-c-d>=0)break;
+                }
+                else if(c1=='-'){
+                    if(c2=='+') {
+                        if(a-b>=0)break;
+                    }
+                    if(c2=='*'){
+                        if(c3=='+' && a-b*c>=0)break;
+                        if(c3=='*' && a-b*c*d>=0)break;
+                        if(c3=='/' && a-b*c/d>=0)break;
+                    }
+                    if(c2=='/'){
+                        if(c3=='+' && a-b/c>=0)break;
+                        if(c3=='*' && a-b/c*d>=0)break;
+                        if(c3=='/' && a-b/c/d>=0)break;
+                    }
+                }
+                else if(c2=='-')
+                {
+                    if(c1=='+') {
+                        if(c3=='+' && b-c+d>=0)break;
+                        if(c3=='*' && b-c*d>=0)break;
+                        if(c3=='/' && b-c/d>=0)break;
+                    }
+                    if(c1=='*'){
+                        if(c3=='+' && a*b-c>=0)break;
+                        if(c3=='*' && a*b-c*d>=0)break;
+                        if(c3=='/' && a*b-c/d>=0)break;
+                    }
+                    if(c1=='/'){
+                        if(c3=='+' && a/b-c>=0)break;
+                        if(c3=='*' && a/b-c*d>=0)break;
+                        if(c3=='/' && a/b-c/d>=0)break;
+                    }
+                }
+                else if(c3=='-')
+                {
+                    if(c1=='+') {
+                        if(c2=='+' && c-d>=0)break;
+                        if(c2=='*' && b*c-d>=0)break;
+                        if(c2=='/' && b/c-d>=0)break;
+                    }
+                    if(c1=='*'){
+                        if(c2=='+' && c-d>=0)break;
+                        if(c2=='*' && a*b*c-d>=0)break;
+                        if(c2=='/' && a*b/c-d>=0)break;
+                    }
+                    if(c1=='/'){
+                        if(c2=='+' && c-d>=0)break;
+                        if(c2=='*' && a/b*c-d>=0)break;
+                        if(c2=='/' && a/b/c-d>=0)break;
+                    }
+                }
+             }
+         }
+
+        s = "" + a + c1 + b + c2 + c + c3 + d;
+        return s;
     }
 }

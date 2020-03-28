@@ -83,4 +83,12 @@ public class TestMyMathApp {
         System.out.println(s);
     }
 
+    @Test
+    public void testshengcheng(){
+        String s;
+        s = GenerateQuestion.threeSymbol(50);
+        System.out.println(s);
+
+    }
+
 }
