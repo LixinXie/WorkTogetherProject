@@ -14,7 +14,7 @@ public class TestMyMathApp {
 
     @Test
     public void testPrintQuestion(){
-        List<String> list = GenerateQuestion.generateQuestion(30,4);
+        List<String> list = GenerateQuestion.generateQuestion(0,4);
         System.out.println(list);
     }
     @Test

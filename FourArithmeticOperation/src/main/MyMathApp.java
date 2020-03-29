@@ -18,10 +18,14 @@ public class MyMathApp {
         String order = scanner.next();
         switch(order){
             case "-q":
-                System.out.println("请输入生成题目个数-n：");
+                System.out.println("请输入生成题目个数-n(大于0的整数)：");
                 n=scanner.nextInt();
-                System.out.println("请输入数值取值范围-r：");
+                System.out.println("请输入数值取值范围-r(大于0的整数)：");
                 r=scanner.nextInt();
+                if(n<0||r<0){
+                    System.out.println("请的输入有误！");
+                    break;
+                }
                 List<String> questionList = GenerateQuestion.generateQuestion(n,r);
                 List<String> answerList = Calculator.calculate(questionList);
                 printQuestion(questionList);
