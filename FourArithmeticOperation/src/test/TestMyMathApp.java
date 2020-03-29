@@ -1,8 +1,8 @@
 package test;
 
 import main.Calculator;
+import main.CompareAnswer;
 import main.GenerateQuestion;
-import main.MyMathApp;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,15 +13,15 @@ public class TestMyMathApp {
     @Test
     public void testPrintQuestion(){
         List<String> list = GenerateQuestion.generateQuestion(30,4);
-        MyMathApp.printQuestion(list);
+        System.out.println(list);
     }
     @Test
     public void testPrintAnsweer(){
-        List<String> list = new ArrayList<>();
-        list.add("23");
-        list.add("3");
-        list.add("100");
-        MyMathApp.printAnswer(list);
+        List<String> list = GenerateQuestion.generateQuestion(10,5);
+        List<String> answerlist = Calculator.calculate(list);
+        System.out.println(list);
+        System.out.println("#######");
+        System.out.println(answerlist);
     }
     @Test
     public void testCompareAnswer(){
@@ -53,9 +53,7 @@ public class TestMyMathApp {
         list.add("2*3");
         list.add("2-3");
         List<String> answer = Calculator.calculate(list);
-        for (String s : answer) {
-            System.out.println(s);
-        }
+        System.out.println(answer);
     }
     @Test
     public void testadd(){
@@ -88,7 +86,11 @@ public class TestMyMathApp {
         String s;
         s = GenerateQuestion.threeSymbol(50);
         System.out.println(s);
-
+    }
+    @Test
+    public void testFile2List() throws Exception {
+        List<String> list = CompareAnswer.file2list("./Exercises.txt");
+        System.out.println(list);
     }
 
 }

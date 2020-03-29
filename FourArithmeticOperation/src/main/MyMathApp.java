@@ -29,14 +29,12 @@ public class MyMathApp {
                 break;
             case "-c":
                 System.out.println("请输入题目文件：");
-                String questionfilename = scanner.nextLine();
-                File questionfile = new File(questionfilename);
+                String questionfilepath = scanner.nextLine();
 
                 System.out.println("请输入答案文件：");
-                String answerfilename = scanner.nextLine();
-                File answerfile = new File(answerfilename);
+                String answerfilepath = scanner.nextLine();
 
-                List<List> result = CompareAnswer.compareAnswer(questionfile,answerfile);
+                List<List> result = CompareAnswer.compareAnswer(questionfilepath,answerfilepath);
                 printCompareResult(result);
                 break;
             default:
