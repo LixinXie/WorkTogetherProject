@@ -14,7 +14,7 @@ public class OutputFile {
         try {
             writer = new BufferedWriter(new FileWriter(file));
             for (String s : list) {
-                writer.write(i+". "+s+" ="+"\n");
+                writer.write(i+"、"+s+" ="+"\n");
                 i++;
             }
         } catch (IOException e) {
@@ -36,7 +36,7 @@ public class OutputFile {
         try {
             writer = new BufferedWriter(new FileWriter(file));
             for (String s : list) {
-                writer.write(i+". "+s+"\n");
+                writer.write(i+"、"+s+"\n");
                 i++;
             }
         } catch (IOException e) {
@@ -53,11 +53,33 @@ public class OutputFile {
     }
     public static void compareresultlist2file(File file, List<List> list){
         BufferedWriter writer = null;
+        int sumcorrect=0;
+        int sumwrong=0;
         try {
             writer = new BufferedWriter(new FileWriter(file));
-           List correct = list.get(0);
-           List wrong = list.get(1);
-
+            List correct = list.get(0);
+            List wrong = list.get(1);
+            sumcorrect=correct.size();
+            sumwrong=wrong.size();
+            writer.write("Correct: "+sumcorrect);
+            writer.write(" (");
+            for(int i=0;i<correct.size();i++){
+                writer.write((String) correct.get(i));
+                if(i<correct.size()-1){
+                    writer.write(", ");
+                }
+            }
+            writer.write(")");
+            writer.write("\n");
+            writer.write("Wrong: "+sumwrong);
+            writer.write(" (");
+            for(int j=0;j<wrong.size();j++){
+                writer.write((String) wrong.get(j));
+                if(j<wrong.size()-1){
+                    writer.write(", ");
+                }
+            }
+            writer.write(")");
         } catch (IOException e) {
             e.printStackTrace();
         }finally {

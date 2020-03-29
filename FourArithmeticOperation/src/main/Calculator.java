@@ -65,8 +65,10 @@ public class Calculator {
     //除法
     public static String div(int l, int r){
         String result = null;
-        if(l==0){
+        if(l==0){//被除数等于0
             result = "" + 0;
+        }else if(r==0){//除数等于0
+            result = "NaN";
         }else if(l==r){//等于1的情况
             result = "1";
         }else if(l<r){//真分数情况
@@ -278,5 +280,4 @@ public class Calculator {
         }
         return result;
     }
-
 }

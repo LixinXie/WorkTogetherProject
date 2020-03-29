@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MyMathApp {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int n;//题目个数
         int r;//数值取值范围
         System.out.println("欢迎使用四则运算");
@@ -29,10 +29,12 @@ public class MyMathApp {
                 break;
             case "-c":
                 System.out.println("请输入题目文件：");
-                String questionfilepath = scanner.nextLine();
+                Scanner scanner1 = new Scanner(System.in);
+                String questionfilepath = scanner1.nextLine();
 
                 System.out.println("请输入答案文件：");
-                String answerfilepath = scanner.nextLine();
+                Scanner scanner2 = new Scanner(System.in);
+                String answerfilepath = scanner2.nextLine();
 
                 List<List> result = CompareAnswer.compareAnswer(questionfilepath,answerfilepath);
                 printCompareResult(result);
