@@ -42,16 +42,24 @@ public class TestMyMathApp {
         OutputFile.compareresultlist2file(new File("F:/test.txt"),list);
     }
     @Test
-    public void testCompareAnswer(){
-
+    public void testCompareAnswer() throws Exception {
+        String quespath = "Exercises.txt";
+        String answpath = "Answers.txt";
+        List list = CompareAnswer.compareAnswer(quespath,answpath);
+        System.out.println(list);
     }
     @Test
     public void testFile2List() throws Exception {
-        List<String> list = CompareAnswer.file2list("./Exercises.txt");
+        List<String> list = CompareAnswer.questionfile2list("./Exercises.txt");
         //System.out.println(list);
         for (String s : list) {
             System.out.println(s);
         }
+       /*List<String> list = CompareAnswer.answerfile2list("f:/test.txt");
+        //System.out.println(list);
+        for (String s : list) {
+            System.out.println(s);
+        }*/
     }
     @Test
     public void test1(){
