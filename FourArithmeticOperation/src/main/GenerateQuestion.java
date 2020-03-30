@@ -85,9 +85,9 @@ public class GenerateQuestion {
                     break;
                 }else if(c2=='/'&& a-b/c>=0){// - /
                     break;
-                }
-                if(c2=='+'&& a-b>=0)// - +
+                }else if(c2=='+'&& a-b>=0){// - +
                     break;
+                }
             }else{// 其他 -
                 if(c1=='+' && a+b-c>=0){// + -
                     break;
@@ -107,7 +107,7 @@ public class GenerateQuestion {
     //生成一个含三个符号的题目
     public static String threeSymbol(int r){
         int a,b,c,d;
-        String s = new String();
+        String s = "";
         String s1,s2;
         char c1 = randomSymbol();
         char c2 = randomSymbol();
