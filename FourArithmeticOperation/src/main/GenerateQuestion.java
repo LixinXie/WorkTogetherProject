@@ -125,7 +125,7 @@ public class GenerateQuestion {
                 if (c1 == '-' && c2 == '-' && c3 == '-') {
                     if (a - b - c - d >= 0) break;}
                 else if (c1=='-'&&c2=='-'){
-                    if(c3=='+' && a-b-c+d>=0)break;
+                    if(c3=='+' && a-b-c>=0)break;
                     if(c3=='*' && a-b-c*d>=0)break;
                     if(c3=='/' && a-b-c/d>=0)break;
                 }
@@ -192,7 +192,6 @@ public class GenerateQuestion {
                 }
              }
          }
-
         s = "" + a + c1 + b + c2 + c + c3 + d;
         return s;
     }

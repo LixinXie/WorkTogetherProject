@@ -8,6 +8,24 @@ import java.util.List;
 
 public class OutputFile {
     //输出题目文件
+    public static void printQuestion(List<String> queList){
+        File file = new File("./Exercises.txt");
+        questionlist2file(file,queList);
+        System.out.println("生成题目成功！");
+    }
+    //输出答案文件
+    public static void printAnswer(List<String> ansList){
+        File file = new File("./Answers.txt");
+        answerlist2file(file,ansList);
+        System.out.println("生成答案成功！");
+    }
+    //输出答案的比较结果
+    public static void printCompareResult(List<List> resultList){
+        File file = new File("./Grade.txt");
+        compareresultlist2file(file,resultList);
+        System.out.println("答案验证完成！");
+    }
+    //输出题目文件
     public static void questionlist2file(File file, List<String> list){
         int i=1;//行号从1开始
         BufferedWriter writer = null;
@@ -51,6 +69,7 @@ public class OutputFile {
             }
         }
     }
+    //输出比较结果文件
     public static void compareresultlist2file(File file, List<List> list){
         BufferedWriter writer = null;
         int sumcorrect=0;
