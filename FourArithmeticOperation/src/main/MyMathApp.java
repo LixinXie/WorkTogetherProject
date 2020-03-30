@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MyMathApp {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int n;//题目个数
         int r;//数值取值范围
         System.out.println("欢迎使用四则运算");
@@ -18,10 +18,14 @@ public class MyMathApp {
         String order = scanner.next();
         switch(order){
             case "-q":
-                System.out.println("请输入生成题目个数-n：");
+                System.out.println("请输入生成题目个数-n(大于0的整数)：");
                 n=scanner.nextInt();
-                System.out.println("请输入数值取值范围-r：");
+                System.out.println("请输入数值取值范围-r(大于0的整数)：");
                 r=scanner.nextInt();
+                if(n<0||r<0){
+                    System.out.println("请的输入有误！");
+                    break;
+                }
                 List<String> questionList = GenerateQuestion.generateQuestion(n,r);
                 List<String> answerList = Calculator.calculate(questionList);
                 printQuestion(questionList);
@@ -29,14 +33,14 @@ public class MyMathApp {
                 break;
             case "-c":
                 System.out.println("请输入题目文件：");
-                String questionfilename = scanner.nextLine();
-                File questionfile = new File(questionfilename);
+                Scanner scanner1 = new Scanner(System.in);
+                String questionfilepath = scanner1.nextLine();
 
                 System.out.println("请输入答案文件：");
-                String answerfilename = scanner.nextLine();
-                File answerfile = new File(answerfilename);
+                Scanner scanner2 = new Scanner(System.in);
+                String answerfilepath = scanner2.nextLine();
 
-                List<List> result = CompareAnswer.compareAnswer(questionfile,answerfile);
+                List<List> result = CompareAnswer.compareAnswer(questionfilepath,answerfilepath);
                 printCompareResult(result);
                 break;
             default:
