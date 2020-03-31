@@ -19,7 +19,7 @@ public class TestMyMathApp {
     }
     @Test
     public void testPrintAnsweer(){
-        List<String> list = GenerateQuestion.generateQuestion(10,5);
+        List<String> list = GenerateQuestion.generateQuestion(10000,5);
         List<String> answerlist = Calculator.calculate(list);
         System.out.println(list);
         System.out.println("#######");
