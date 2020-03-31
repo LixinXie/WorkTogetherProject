@@ -118,7 +118,9 @@ public class TestMyMathApp {
     @Test
     public void testshengcheng(){
         String s;
-        s = GenerateQuestion.threeSymbol(50);
-        System.out.println(s);
+        int i;
+        for(i=0;i<=1000;i++)
+        {s = GenerateQuestion.threeSymbol(20);
+        System.out.println(s);}
     }
 }
