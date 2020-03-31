@@ -25,10 +25,29 @@ public class MyMathApp {
                     System.out.println("请的输入有误！");
                     break;
                 }
+                long startTime = System.currentTimeMillis(); // 获取开始时间
                 List<String> questionList = GenerateQuestion.generateQuestion(n,r);
+                long endTime = System.currentTimeMillis(); // 获取结束时间
+
+
+                long startTime2 = System.currentTimeMillis(); // 获取开始时间
                 List<String> answerList = Calculator.calculate(questionList);
+                long endTime2 = System.currentTimeMillis(); // 获取结束时间
+
+
+                long startTime3 = System.currentTimeMillis(); // 获取开始时间
                 OutputFile.printQuestion(questionList);
+                long endTime3 = System.currentTimeMillis(); // 获取结束时间
+
+
+                long startTime4 = System.currentTimeMillis(); // 获取开始时间
                 OutputFile.printAnswer(answerList);
+                long endTime4 = System.currentTimeMillis(); // 获取结束时间
+
+                System.out.println("generateQuestion方法运行时间： " + (endTime - startTime) + "ms");
+                System.out.println("calculate方法运行时间： " + (endTime2 - startTime2) + "ms");
+                System.out.println("printQuestion方法运行时间： " + (endTime3 - startTime3) + "ms");
+                System.out.println("printAnswer方法运行时间： " + (endTime4 - startTime4) + "ms");
                 break;
             case "-c":
                 System.out.println("请输入题目文件：");

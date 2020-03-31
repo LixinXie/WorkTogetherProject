@@ -6,7 +6,7 @@ import main.GenerateQuestion;
 import main.OutputFile;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,26 +26,20 @@ public class TestMyMathApp {
         System.out.println(answerlist);
     }
     @Test
-    public void testPrintCompareResultList2File(){
+    public void testPrintCompareResult() throws Exception {
         List<List> list = new ArrayList<>();
+        String quespath = "Exercises.txt";
+        String answpath = "Answers.txt";
         List<String > correctlist = new ArrayList();
         List<String> wronglist = new ArrayList();
-        correctlist.add("1");
-        correctlist.add("2");
-        correctlist.add("3");
-        wronglist.add("4");
-        wronglist.add("5");
-        wronglist.add("6");
-        wronglist.add("7");
-        list.add(correctlist);
-        list.add(wronglist);
-        OutputFile.compareresultlist2file(new File("F:/test.txt"),list);
+        list = CompareAnswer.compareAnswer(quespath,answpath);
+        OutputFile.printCompareResult(list);
     }
     @Test
     public void testCompareAnswer() throws Exception {
         String quespath = "Exercises.txt";
         String answpath = "Answers.txt";
-        List list = CompareAnswer.compareAnswer(quespath,answpath);
+        List<List> list = CompareAnswer.compareAnswer(quespath,answpath);
         System.out.println(list);
     }
     @Test
